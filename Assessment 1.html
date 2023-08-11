@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style>
+        body{
+            position:absolute;
+            top:35%;
+            left:15%;
+        }
+        table{
+            border:1px solid grey;
+            width:700px;
+            height:100px;
+        }
+        .menu{
+            display:inline;
+        }
+        .link{
+            margin:10px;
+            text-decoration:none;
+            color:black;
+        }
+        section{
+            position:relative;
+            margin:0;
+            padding:0;
+          background-image:url('g.png');
+          background-size:110%;
+            
+            width:100%;
+            height:400px;
+        }
+        #curve{
+            position: absolute;
+            bottom:0%;
+            width:100%;
+        }
+        #curve path{
+            fill:white;
+            height:200px;
+        }
+        .check{
+            position: absolute;
+            top:68%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color:#158cff;
+            border:none;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 40px;
+            text-align: center;
+            width:150px;
+        }
+        .text{
+            position: absolute;
+            top:10%;
+            left:5%;
+            text-align:left;
+        }
+        p{
+            font-size:12px;
+        }
+        b{
+            font-size:28px;
+        }
+        
+    </style>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td style="position: absolute;top:1%; left:45%;"><canvas id="myCanvas" width="100px" height="40px" style="border:1px solid grey;"></canvas>
+            
+</td>
+            <td style="position: absolute; top:9%; left:10%;">
+                <nav class="navbar">  
+                  <div class="menu">
+                      <a href="/" class="link">Nav1</a>
+                      <a href="/" class="link">Nav2</a>
+                      <a href="/" class="link">Nav3</a><i class="bi-chevron-down"></i>&nbsp&nbsp
+                      <a href="/" class="link">Nav4 </a><i class="bi-chevron-down"></i>&nbsp &nbsp
+                      <a href="/" class="link">Nav5</a>
+                      <a href="/" class="link">Nav6</a>
+                      <a href="/" class="link">Nav7</a>
+                      <a href="/" class="link">Nav8</a>
+                  </div>
+                </nav>
+            </td>
+        </tr>
+     </table>
+         
+     <table style="height:300px;">
+        <tr>
+            <td>
+                
+                <section>     
+                    <div class="text">
+                   <b>Lorem ipsum dolor sit amet,<br>consectetur adiplacing elit.</b>
+                   <p>Lorem ipsum dolor sit amet, consectetur adiplacing elit. Ut sed <br>commodo est. Pellentesque eu placerat mauris. Etiam ut maximus <br>ante. Suspendisse varius dolor nec bibendum dignissim. Proin in<br> diam a justo sollicitudin mattis eu saggitis nunc. In hac habitasse<br> platea dictumst.</p>
+                </div>  
+                    <button value="check" class="check">Check Pricing</button>             
+                    <svg id="curve" data-name="Layer-1" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 320"><defs><style>
+                        .cls-1{
+                            fill:#fff;
+                        }
+                    </style></defs>
+                    
+                    <path class="cls-1" d="M0,160L60,149.3C120,139,240,117,360,106.7C480,96,600,96,720,117.3C840,139,960,181,1080,170.7C1200,160,1320,96,1380,64L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+                    
+                </section>
+            </td>
+        </tr>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+        function drawLine(ctx,x1,y1,x2,y2,stroke='grey',width=1){
+        
+ctx.beginPath();
+ctx.moveTo(x1,y1);
+ctx.lineTo(x2,y2);
+ctx.strokeStyle=stroke;
+ctx.lineWidth=width;
+ctx.stroke();
+var canvas=document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+drawLine(ctx,0,0,100,40,'grey',1);
+drawLine(ctx,100,0,0,40,'grey',1);
+    </script>
+</body>
+</html>
